@@ -1,0 +1,19 @@
+#package list
+#####
+
+django
+black
+isort
+django-mptt
+pillow
+coverage
+six
+django-environ
+paypal-checkout-serversdk
+pytest-django
+
+
+
+
+
+
