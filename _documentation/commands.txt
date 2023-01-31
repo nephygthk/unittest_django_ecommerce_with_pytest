@@ -1,0 +1,8 @@
+
+
+pytest -rP
+
+coverage run -m pytest
+coverage html
+
+pip freeze > requirements.txt

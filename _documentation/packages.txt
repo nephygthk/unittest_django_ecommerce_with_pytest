@@ -11,6 +11,9 @@ six
 django-environ
 paypal-checkout-serversdk
 pytest-django
+factory-boy
+pytest-factoryboy
+
 
 
 

@@ -1,0 +1,1 @@
+to run test, build the database in factory, take it to conftest to create fixtures and then use the fixtures in your test files
