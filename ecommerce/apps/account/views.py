@@ -20,8 +20,8 @@ from .tokens import account_activation_token
 
 def account_register(request):
 
-    # if request.user.is_authenticated:
-    #     return redirect('/')
+    if request.user.is_authenticated:
+        return redirect("/")
 
     if request.method == "POST":
         registerForm = RegistrationForm(request.POST)
@@ -45,6 +45,8 @@ def account_register(request):
             )
             user.email_user(subject=subject, message=message)
             return HttpResponse("registered succesfully and activation sent")
+        else:
+            return HttpResponse("Error handler content", status=400)
     else:
         registerForm = RegistrationForm()
     return render(request, "account/registration/register.html", {"form": registerForm})
@@ -113,6 +115,8 @@ def add_address(request):
             address_form.customer = request.user
             address_form.save()
             return HttpResponseRedirect(reverse("account:addresses"))
+        else:
+            return HttpResponse("Error handler content", status=400)
     else:
         address_form = UserAddressForm()
     return render(request, "account/user/edit_addresses.html", {"form": address_form})
